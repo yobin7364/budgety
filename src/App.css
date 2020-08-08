@@ -6,6 +6,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* always use max-width to have full extension of all element */
+  max-width: 100%;
 }
 
 .clearfix::after {
@@ -17,7 +19,6 @@
 body {
   color: #555;
   font-family: Open Sans;
-  font-size: 16px;
   position: relative;
   height: 100vh;
   font-weight: 400;
@@ -32,20 +33,22 @@ body {
 **********************************************/
 
 .top {
-  height: 40vh;
+  height: 51vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(./img/back.png);
   background-size: cover;
   background-position: center;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .budget {
-  position: absolute;
+  /* position: absolute; */
   width: 350px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .budget__title {
@@ -113,10 +116,16 @@ body {
 **********************************************/
 
 /***** FORM *****/
+/* .bottom{
+  display: flex;
+  flex-direction: column;
+} */
+
 .add {
   padding: 14px;
   border-bottom: 1px solid #e7e7e7;
   background-color: #f7f7f7;
+
 }
 
 .add__container {
@@ -179,18 +188,66 @@ body {
 .container {
   width: 1000px;
   margin: 60px auto;
+  display: flex;
 }
 
+
+
 .income {
-  float: left;
   width: 475px;
   margin-right: 50px;
 }
 
 .expenses {
-  float: left;
   width: 475px;
 }
+
+@media only screen and (max-width: 1024px) {
+  .container{
+      padding: 0 10px;
+      margin: 30px auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+}
+  .income {
+      margin-bottom: 44px;
+      margin-right: 0;
+  }
+
+}
+
+@media only screen and (max-width: 683px) {
+  .add__container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .add__value{
+      width: 400px;
+  }
+
+  .add__description{
+      margin: 6px 0;
+  }
+
+  .add__value{
+      margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .budget{
+      padding: 10px;
+  }
+}
+
+
 
 h2 {
   text-transform: uppercase;
