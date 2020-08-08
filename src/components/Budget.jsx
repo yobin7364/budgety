@@ -19,7 +19,7 @@ export const Budget = () => {
         <div className="top">
             <div className="budget">
                 <div className="budget__title">
-                    Available Budgety in <span className="budget__title--month">{month}</span>:
+                    Available Budget in <span className="budget__title--month">{month}</span>:
                 </div>
 
                 <div className="budget__value">{totalIncome >= totalExp ? '+' : '-'} {Math.abs(budget.toFixed(2))}</div>
