@@ -22,7 +22,7 @@ export const Budget = () => {
                     Available Budget in <span className="budget__title--month">{month}</span>:
                 </div>
 
-                <div className="budget__value">{totalIncome >= totalExp ? '+' : '-'} {Math.abs(budget.toFixed(2))}</div>
+                <div className="budget__value">{totalIncome >= totalExp ? '+' : '-'} Rs {Math.abs(budget.toFixed(2))}</div>
 
                 <div className="budget__income clearfix">
                     <div className="budget__income--text">Income</div>

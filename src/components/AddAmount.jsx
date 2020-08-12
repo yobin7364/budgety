@@ -1,11 +1,11 @@
-import React, {useState, useContext} from 'react';
-import {GlobalContext} from '../context/GlobalState';
+import React, { useState, useContext } from 'react';
+import { GlobalContext } from '../context/GlobalState';
 
 export const AddAmount = () => {
-    const [sign,setSign] = useState('inc');
-    const [text,setText] = useState('');
-    const [amount,setAmount] = useState('');
-    const {addTransaction} = useContext(GlobalContext);
+    const [sign, setSign] = useState('inc');
+    const [text, setText] = useState('');
+    const [amount, setAmount] = useState('');
+    const { addTransaction } = useContext(GlobalContext);
 
     const submit = (e) => {
         e.preventDefault();
@@ -28,8 +28,8 @@ export const AddAmount = () => {
                     <option value="inc">+</option>
                     <option value="exp">-</option>
                 </select>
-                <input type="text" className={sign === 'inc' ? "add__description" : "add__description red-focus"} placeholder="Add description" value={text} onChange={(e) => setText(e.target.value)}/>
-                <input type="number" className={sign === 'inc' ? "add__value" : "add__value red-focus"}  placeholder="Value" value={amount} onChange={(e) => setAmount(e.target.value)}/>
+                <input type="text" className={sign === 'inc' ? "add__description" : "add__description red-focus"} placeholder="Add description" value={text} onChange={(e) => setText(e.target.value)} required />
+                <input type="number" className={sign === 'inc' ? "add__value" : "add__value red-focus"} placeholder="Value" value={amount} onChange={(e) => setAmount(e.target.value)} required />
                 <button className={sign === 'inc' ? "add__btn" : "add__btn red"} type="submit"><i className="ion-ios-checkmark-outline" ></i></button>
             </form>
         </div>
